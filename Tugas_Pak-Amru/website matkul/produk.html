@@ -6,7 +6,7 @@
     <title>Online Shop</title>
     <style>
       #header {
-        background-color: lightblue;
+        background-color: #bf40bf;
         text-align: center;
         padding: 50px;
         font-size: 35px;
@@ -14,51 +14,79 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        color: white;
       }
       #menu {
-        background-color: lightgray;
+        background-color: white;
         padding: 20px;
         text-align: center;
         font-size: 30px;
         text-align: center;
         display: flex;
-        justify-content: center;
+        justify-content: end;
         align-items: center;
       }
       #menu a {
         text-decoration: none;
-        color: black;
+        color: #bf40bf;
         margin: 0 15px;
         font-size: 18px;
       }
       #menu a:hover {
         color: blue;
       }
-      #l-slide {
-        background-color: lightgreen;
-        width: 20%;
-        float: left;
-        padding: 20px;
-        box-sizing: border-box;
-        height: 550px;
-        font-size: 30px;
-        text-align: center;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+
+      .banner img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
       }
+
       #content {
         background-color: white;
-        width: 60%;
+        width: 100%;
         float: left;
         padding: 20px;
         box-sizing: border-box;
         min-height: 400px;
         display: flex;
+        gap: 20px;
+      }
+
+      .products-section {
+        flex: 1;
+        display: flex;
         flex-wrap: wrap;
         gap: 15px;
-        justify-content: center;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+
+      .recommendations-section {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .card-rekomendasi {
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 15px;
+        width: 80%;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+      .card-rekomendasi img {
+        width: 100%;
+      }
+      .rekomendasi-tittle {
+        font-size: 20px;
+        font-weight: bold;
+        color: #bf40bf;
+        margin-bottom: 10px;
       }
       .product-card {
         background-color: #f9f9f9;
@@ -106,87 +134,193 @@
       .product-btn:hover {
         background-color: #2980b9;
       }
-      #r-side {
-        background-color: lightcoral;
-        width: 20%;
-        float: left;
-        padding: 20px;
-        box-sizing: border-box;
-        height: 550px;
-        font-size: 30px;
-        text-align: center;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
+
       #footer {
-        background-color: lightgray;
-        text-align: center;
-        padding: 20px;
+        background-color: gray;
+        color: white;
+        padding: 40px 20px 20px;
         clear: both;
-        height: 100px;
-        font-size: 30px;
-        text-align: center;
+        font-size: 14px;
+      }
+
+      .footer-content {
         display: flex;
-        justify-content: center;
-        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin: 0 auto;
+        gap: 30px;
+      }
+
+      .footer-section {
+        flex: 1;
+        min-width: 200px;
+      }
+
+      .footer-section h3 {
+        color: #bf40bf;
+        margin-bottom: 15px;
+        font-size: 18px;
+      }
+
+      .footer-section p,
+      .footer-section ul {
+        line-height: 1.6;
+        margin-bottom: 10px;
+      }
+
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .footer-section ul li {
+        margin-bottom: 8px;
+      }
+
+      .footer-section ul li a {
+        color: #ccc;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .footer-section ul li a:hover {
+        color: #bf40bf;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 15px;
+        margin-top: 15px;
+      }
+
+      .social-links a {
+        color: #ccc;
+        font-size: 20px;
+        transition: color 0.3s ease;
+      }
+
+      .social-links a:hover {
+        color: #bf40bf;
+      }
+
+      .footer-bottom {
+        border-top: 1px solid #555;
+        margin-top: 30px;
+        padding-top: 20px;
+        text-align: center;
+        color: #ccc;
       }
     </style>
   </head>
   <body>
-    <div id="header">Header</div>
+    <div id="header">Toko Online</div>
     <div id="menu">
       <a href="index.html">Beranda</a>
       <a href="produk.html">Product</a>
       <a href="member.html">Member</a>
       <a href="registrasi.html">Registrasi</a>
     </div>
-    <div id="l-slide">Populer</div>
+
+    <div class="banner"><img src="assets/image/store.png" alt="" /></div>
+
     <div id="content">
-      <div class="product-card">
-        <img src="assets/image/laptop.png" alt="Produk 1" />
-        <div class="product-title">Laptop Gaming</div>
-        <div class="product-price">Rp 15.000.000</div>
-        <button class="product-btn">Beli Sekarang</button>
+      <div class="products-section">
+        <div class="product-card">
+          <img src="assets/image/laptop.png" alt="Produk 1" />
+          <div class="product-title">Laptop Gaming</div>
+          <div class="product-price">Rp 15.000.000</div>
+          <button class="product-btn">Beli Sekarang</button>
+        </div>
+
+        <div class="product-card">
+          <img src="assets/image/handphone.png" alt="Produk 2" />
+          <div class="product-title">Smartphone</div>
+          <div class="product-price">Rp 8.500.000</div>
+          <button class="product-btn">Beli Sekarang</button>
+        </div>
+
+        <div class="product-card">
+          <img src="assets/image/headphone.png" alt="Produk 3" />
+          <div class="product-title">Headphone</div>
+          <div class="product-price">Rp 1.200.000</div>
+          <button class="product-btn">Beli Sekarang</button>
+        </div>
+
+        <div class="product-card">
+          <img src="assets/image/smartwatch.png" alt="Produk 4" />
+          <div class="product-title">Smart Watch</div>
+          <div class="product-price">Rp 3.500.000</div>
+          <button class="product-btn">Beli Sekarang</button>
+        </div>
+
+        <div class="product-card">
+          <img src="assets/image/tablet.png" alt="Produk 5" />
+          <div class="product-title">Tablet</div>
+          <div class="product-price">Rp 5.800.000</div>
+          <button class="product-btn">Beli Sekarang</button>
+        </div>
+
+        <div class="product-card">
+          <img src="assets/image/keyboard.png" alt="Produk 6" />
+          <div class="product-title">Keyboard Mechanical</div>
+          <div class="product-price">Rp 850.000</div>
+          <button class="product-btn">Beli Sekarang</button>
+        </div>
       </div>
 
-      <div class="product-card">
-        <img src="assets/image/handphone.png" alt="Produk 2" />
-        <div class="product-title">Smartphone</div>
-        <div class="product-price">Rp 8.500.000</div>
-        <button class="product-btn">Beli Sekarang</button>
-      </div>
-
-      <div class="product-card">
-        <img src="assets/image/headphone.png" alt="Produk 3" />
-        <div class="product-title">Headphone</div>
-        <div class="product-price">Rp 1.200.000</div>
-        <button class="product-btn">Beli Sekarang</button>
-      </div>
-
-      <div class="product-card">
-        <img src="assets/image/smartwatch.png" alt="Produk 4" />
-        <div class="product-title">Smart Watch</div>
-        <div class="product-price">Rp 3.500.000</div>
-        <button class="product-btn">Beli Sekarang</button>
-      </div>
-
-      <div class="product-card">
-        <img src="assets/image/tablet.png" alt="Produk 5" />
-        <div class="product-title">Tablet</div>
-        <div class="product-price">Rp 5.800.000</div>
-        <button class="product-btn">Beli Sekarang</button>
-      </div>
-
-      <div class="product-card">
-        <img src="assets/image/keyboard.png" alt="Produk 6" />
-        <div class="product-title">Keyboard Mechanical</div>
-        <div class="product-price">Rp 850.000</div>
-        <button class="product-btn">Beli Sekarang</button>
+      <div class="recommendations-section">
+        <div class="card-rekomendasi">
+          <div class="rekomendasi-tittle">Rekomendasi</div>
+          <img src="assets/image/monitor.png" alt="" />
+          <div class="product-title">Monitor</div>
+          <div class="product-price">Rp 10.000.000</div>
+          <button class="product-btn">Beli Sekarang</button>
+        </div>
       </div>
     </div>
-    <div id="r-side">Advertise</div>
-    <div id="footer">Footer</div>
+
+    <div id="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Kategori Produk</h3>
+          <ul>
+            <li><a href="#">Laptop & Komputer</a></li>
+            <li><a href="#">Smartphone</a></li>
+            <li><a href="#">Audio & Headphone</a></li>
+            <li><a href="#">Smart Watch</a></li>
+            <li><a href="#">Tablet</a></li>
+            <li><a href="#">Aksesoris</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Layanan Pelanggan</h3>
+          <ul>
+            <li><a href="#">Bantuan & FAQ</a></li>
+            <li><a href="#">Cara Pemesanan</a></li>
+            <li><a href="#">Kebijakan Pengembalian</a></li>
+            <li><a href="#">Garansi Produk</a></li>
+            <li><a href="#">Lacak Pesanan</a></li>
+            <li><a href="#">Hubungi Kami</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Kontak Info</h3>
+          <p>📍 Jl. Teknologi No. 123<br />Jakarta Selatan, 12345</p>
+          <p>📞 (021) 1234-5678</p>
+          <p>📧 info@tokoonline.com</p>
+          <p>🕒 Senin - Sabtu: 09:00 - 18:00<br />Minggu: 10:00 - 16:00</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          &copy; 2024 Toko Online. All rights reserved. | Privacy Policy | Terms
+          of Service
+        </p>
+      </div>
+    </div>
   </body>
 </html>
