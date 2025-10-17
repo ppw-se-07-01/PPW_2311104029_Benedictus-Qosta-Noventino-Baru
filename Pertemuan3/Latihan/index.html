@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Shop</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="header">Toko Online</div>
+    <div id="menu">
+      <a href="index.html">Beranda</a>
+      <a href="produk.html">Product</a>
+      <a href="member.html">Member</a>
+      <a href="registrasi.html">Registrasi</a>
+    </div>
+
+    <!-- Banner slider (CSS only) -->
+    <div class="banner slider">
+      <div class="slides">
+        <div class="slide">
+          <img src="assets/image/store.png" alt="Promo Toko Online" />
+        </div>
+        <div class="slide">
+          <img src="assets/image/phone-store.png" alt="Promo Toko Online" />
+        </div>
+        <div class="slide">
+          <img src="assets/image/store.png" alt="Promo Toko Online" />
+        </div>
+      </div>
+    </div>
+
+    <div id="content">
+      <div class="products-section">
+        <div class="product-card">
+          <img
+            src="assets/image/laptop.png"
+            onclick="detailmg()"
+            alt="Produk 1"
+          />
+          <div class="product-title">Laptop Gaming</div>
+          <div class="product-price">Rp 15.000.000</div>
+          <button class="product-btn">Beli Sekarang</button>
+        </div>
+
+        <div class="detailGambar">
+          <img
+            src="assets/image/monitor.png"
+            style="width: 200px"
+            onclick="sembunyikan()"
+            alt=""
+          />
+        </div>
+
+        <div class="product-card">
+          <img src="assets/image/handphone.png" alt="Produk 2" />
+          <div class="product-title">Smartphone</div>
+          <div class="product-price">Rp 8.500.000</div>
+          <button class="product-btn">Beli Sekarang</button>
+        </div>
+
+        <div class="product-card">
+          <img src="assets/image/headphone.png" alt="Produk 3" />
+          <div class="product-title">Headphone</div>
+          <div class="product-price">Rp 1.200.000</div>
+          <button class="product-btn">Beli Sekarang</button>
+        </div>
+
+        <div class="product-card">
+          <img src="assets/image/smartwatch.png" alt="Produk 4" />
+          <div class="product-title">Smart Watch</div>
+          <div class="product-price">Rp 3.500.000</div>
+          <button class="product-btn">Beli Sekarang</button>
+        </div>
+
+        <div class="product-card">
+          <img src="assets/image/tablet.png" alt="Produk 5" />
+          <div class="product-title">Tablet</div>
+          <div class="product-price">Rp 5.800.000</div>
+          <button class="product-btn">Beli Sekarang</button>
+        </div>
+
+        <div class="product-card">
+          <img src="assets/image/keyboard.png" alt="Produk 6" />
+          <div class="product-title">Keyboard Mechanical</div>
+          <div class="product-price">Rp 850.000</div>
+          <button class="product-btn">Beli Sekarang</button>
+        </div>
+      </div>
+
+      <div class="recommendations-section">
+        <div class="card-rekomendasi">
+          <div class="rekomendasi-tittle">Rekomendasi</div>
+          <img src="assets/image/monitor.png" alt="" />
+          <div class="product-title">Monitor</div>
+          <div class="product-price">Rp 10.000.000</div>
+          <button class="product-btn">Beli Sekarang</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Kategori Produk</h3>
+          <ul>
+            <li><a href="#">Laptop & Komputer</a></li>
+            <li><a href="#">Smartphone</a></li>
+            <li><a href="#">Audio & Headphone</a></li>
+            <li><a href="#">Smart Watch</a></li>
+            <li><a href="#">Tablet</a></li>
+            <li><a href="#">Aksesoris</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Layanan Pelanggan</h3>
+          <ul>
+            <li><a href="#">Bantuan & FAQ</a></li>
+            <li><a href="#">Cara Pemesanan</a></li>
+            <li><a href="#">Kebijakan Pengembalian</a></li>
+            <li><a href="#">Garansi Produk</a></li>
+            <li><a href="#">Lacak Pesanan</a></li>
+            <li><a href="#">Hubungi Kami</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Kontak Info</h3>
+          <p>📍 Jl. Teknologi No. 123<br />Jakarta Selatan, 12345</p>
+          <p>📞 (021) 1234-5678</p>
+          <p>📧 info@tokoonline.com</p>
+          <p>🕒 Senin - Sabtu: 09:00 - 18:00<br />Minggu: 10:00 - 16:00</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          &copy; 2024 Toko Online. All rights reserved. | Privacy Policy | Terms
+          of Service
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<style>
+  .detailGambar {
+    display: none;
+  }
+</style>
+
+<script>
+  function detailmg() {
+    $(".detailGambar").show();
+  }
+
+  function sembunyikan() {
+    $(".detailGambar").hide();
+  }
+</script>
