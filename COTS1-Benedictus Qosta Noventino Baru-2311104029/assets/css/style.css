@@ -1,0 +1,18 @@
+.rekomendasi-card .card-img-top {
+  height: 300px;
+  object-fit: cover;
+}
+.rekomendasi-card .card-body {
+  padding: 0.5rem;
+}
+.rekomendasi-card .card-title {
+  font-size: 1rem;
+}
+.rekomendasi-card .card-text {
+  font-size: 0.85rem;
+}
+
+.navbar-brand img {
+  height: 50px; /* atur tinggi logo */
+  width: auto; /* biarkan lebar menyesuaikan */
+}

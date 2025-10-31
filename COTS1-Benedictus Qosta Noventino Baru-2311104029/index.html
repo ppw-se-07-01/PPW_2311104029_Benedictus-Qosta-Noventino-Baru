@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beranda - Noven Coffe</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-opacity-50">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="assets/img/Noven.png" alt="Noven Coffe Logo" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="detail.html">Produk</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- CAROUSEL BANNER -->
+    <div
+      id="carouselExample"
+      class="carousel slide"
+      data-bs-ride="carousel"
+      data-bs-interval="3000"
+    >
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="assets/img/banner1.png"
+            class="d-block w-100"
+            alt="Banner 1"
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="assets/img/banner2.png"
+            class="d-block w-100"
+            alt="Banner 2"
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="assets/img/banner3.png"
+            class="d-block w-100"
+            alt="Banner 3"
+          />
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExample"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExample"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+
+    <!-- KONTEN UTAMA -->
+    <div class="container my-4">
+      <div class="row">
+        <!-- Bagian Kiri: Pencarian + Produk -->
+        <div class="col-lg-8">
+          <!-- KOLOM PENCARIAN -->
+          <form id="searchForm" class="d-flex mb-4">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Cari produk..."
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-primary" type="submit">Cari</button>
+          </form>
+
+          <!-- DAFTAR PRODUK -->
+          <div class="row" id="productList">
+            <!-- Produk 1 -->
+            <div class="col-md-6 mb-4">
+              <div class="card h-100">
+                <img
+                  src="assets/img/menu1.png"
+                  class="card-img-top"
+                  alt="Espresso"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Espresso</h5>
+                  <p class="card-text">
+                    Kopi hitam pekat dengan cita rasa kuat, cocok untuk pecinta
+                    kopi sejati.
+                  </p>
+                  <a href="detail.html" class="btn btn-primary">Detail</a>
+                </div>
+              </div>
+            </div>
+            <!-- Produk 2 -->
+            <div class="col-md-6 mb-4">
+              <div class="card h-100">
+                <img
+                  src="assets/img/menu2.png"
+                  class="card-img-top"
+                  alt="Cappuccino"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Cappuccino</h5>
+                  <p class="card-text">
+                    Perpaduan espresso, susu, dan foam lembut yang creamy dan
+                    seimbang.
+                  </p>
+                  <a href="detail.html" class="btn btn-primary">Detail</a>
+                </div>
+              </div>
+            </div>
+            <!-- Produk 3 -->
+            <div class="col-md-6 mb-4">
+              <div class="card h-100">
+                <img
+                  src="assets/img/menu3.png"
+                  class="card-img-top"
+                  alt="Latte"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Latte</h5>
+                  <p class="card-text">
+                    Espresso dengan susu panas yang lembut, rasa ringan dan
+                    cocok untuk santai.
+                  </p>
+                  <a href="detail.html" class="btn btn-primary">Detail</a>
+                </div>
+              </div>
+            </div>
+            <!-- Produk 4 -->
+            <div class="col-md-6 mb-4">
+              <div class="card h-100">
+                <img
+                  src="assets/img/menu4.png"
+                  class="card-img-top"
+                  alt="Americano"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Americano</h5>
+                  <p class="card-text">
+                    Espresso yang ditambahkan air panas, menghasilkan rasa
+                    ringan namun tetap bold.
+                  </p>
+                  <a href="detail.html" class="btn btn-primary">Detail</a>
+                </div>
+              </div>
+            </div>
+            <!-- Produk 5 -->
+            <div class="col-md-6 mb-4">
+              <div class="card h-100">
+                <img
+                  src="assets/img/menu6.png"
+                  class="card-img-top"
+                  alt="Pizza"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Pizza</h5>
+                  <p class="card-text">
+                    Roti tipis dengan topping keju leleh dan saus tomat khas
+                    Italia.
+                  </p>
+                  <a href="detail.html" class="btn btn-primary">Detail</a>
+                </div>
+              </div>
+            </div>
+            <!-- Produk 6 -->
+            <div class="col-md-6 mb-4">
+              <div class="card h-100">
+                <img
+                  src="assets/img/menu5.png"
+                  class="card-img-top"
+                  alt="Iced Coffee"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Iced Coffee</h5>
+                  <p class="card-text">
+                    Kopi dingin menyegarkan dengan aroma khas, pas untuk cuaca
+                    panas.
+                  </p>
+                  <a href="detail.html" class="btn btn-primary">Detail</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bagian Kanan: Rekomendasi -->
+        <div class="col-lg-4 rekomendasi-card">
+          <h4 class="mb-3 text-white p-2" style="background-color: #5c4033">
+            Rekomendasi
+          </h4>
+          <div
+            class="p-3"
+            style="background-color: #d2b48c; border-radius: 8px"
+          >
+            <div class="row">
+              <!-- Rekomendasi 1 -->
+              <div class="col-12 mb-3">
+                <div class="card">
+                  <img
+                    src="assets/img/menu7.png"
+                    class="card-img-top"
+                    alt="Matcha Coffee"
+                  />
+                  <div class="card-body p-2">
+                    <h6 class="card-title mb-1">Matcha Coffee</h6>
+                    <p class="card-text" style="font-size: 0.85rem">
+                      Perpaduan kopi dan matcha yang unik, segar dan
+                      menenangkan.
+                    </p>
+                    <a href="detail.html" class="btn btn-sm btn-primary"
+                      >Detail</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Rekomendasi 2 -->
+              <div class="col-12 mb-3">
+                <div class="card">
+                  <img
+                    src="assets/img/menu8.png"
+                    class="card-img-top"
+                    alt="Croissant"
+                  />
+                  <div class="card-body p-2">
+                    <h6 class="card-title mb-1">Croissant</h6>
+                    <p class="card-text" style="font-size: 0.85rem">
+                      Pastry lembut berlapis, teman sempurna untuk kopi pagi.
+                    </p>
+                    <a href="detail.html" class="btn btn-sm btn-primary"
+                      >Detail</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Rekomendasi 3 -->
+              <div class="col-12 mb-3">
+                <div class="card">
+                  <img
+                    src="assets/img/menu9.png"
+                    class="card-img-top"
+                    alt="Cookie"
+                  />
+                  <div class="card-body p-2">
+                    <h6 class="card-title mb-1">Cookie</h6>
+                    <p class="card-text" style="font-size: 0.85rem">
+                      Kue renyah manis dengan aroma butter, cocok jadi camilan.
+                    </p>
+                    <a href="detail.html" class="btn btn-sm btn-primary"
+                      >Detail</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Rekomendasi 4 -->
+              <div class="col-12 mb-3">
+                <div class="card">
+                  <img
+                    src="assets/img/menu10.png"
+                    class="card-img-top"
+                    alt="Hot Chocolate"
+                  />
+                  <div class="card-body p-2">
+                    <h6 class="card-title mb-1">Hot Chocolate</h6>
+                    <p class="card-text" style="font-size: 0.85rem">
+                      Minuman cokelat hangat, manis dan creamy untuk sore hari.
+                    </p>
+                    <a href="detail.html" class="btn btn-sm btn-primary"
+                      >Detail</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-white text-center py-3">
+      <p>Noven Coffe &copy; 2025 | by Noven 2311104029</p>
+    </footer>
+
+    <!-- Bootstrap JS + jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script Add to Cart -->
+    <script>
+      $(document).ready(function () {
+        $(".addCartBtn").click(function () {
+          alert("Produk berhasil ditambahkan ke keranjang!");
+        });
+      });
+    </script>
+  </body>
+</html>
