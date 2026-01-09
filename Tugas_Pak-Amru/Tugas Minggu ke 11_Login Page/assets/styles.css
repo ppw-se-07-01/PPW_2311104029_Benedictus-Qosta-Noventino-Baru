@@ -1,0 +1,64 @@
+/* Minimal styles for auth-demo */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f6f8;
+  color: #222;
+}
+.login-container {
+  max-width: 360px;
+  margin: 80px auto;
+  padding: 24px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+.login-container h2 {
+  margin: 0 0 16px;
+  font-size: 20px;
+}
+label {
+  display: block;
+  margin-top: 12px;
+  font-size: 13px;
+}
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccd;
+  box-sizing: border-box;
+  border-radius: 4px;
+  margin-top: 6px;
+}
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 16px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.errors {
+  background: #ffecec;
+  border: 1px solid #f5c2c2;
+  padding: 8px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+.error {
+  color: #8b0000;
+  font-size: 13px;
+}
+.remember {
+  display: block;
+  margin-top: 10px;
+  font-size: 13px;
+}
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+}

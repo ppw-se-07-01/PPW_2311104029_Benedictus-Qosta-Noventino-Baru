@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Praktikum 5</title>
+  </head>
+  <body>
+    <!-- <h2>Berbagai Tipe Data Dasar Di JavaScript</h2>
+    <div id="outputTipeData"></div>
+
+    <h2> Latihan 2 dengan tipe id test</h2>
+    <div id="test"> </div>
+    <script>
+      // Deklarasi berbagai tipe data dasar
+      var angka = 42; // Number
+      var teks = "Ahmad Ruslan"; // String
+      var benar = true; // Boolean
+      var salah = false; // Boolean
+      var kosong = null; // Null
+      var tidakDidefinisikan; // Undefined
+      var daftar = ["apel", "pisang", "mangga"]; // Array
+      var tanggal = new Date(); // Date (objek tanggal)
+      var pola = /[A-Z]/; // RegExp (regular expression)
+      var orang = { nama: "Ruslan", umur: 21 }; // Object
+      // Gabungkan hasil ke satu variabel string
+      var hasil = "";
+      hasil += "<b>Number:</b> " + angka + "<br>";
+      hasil += "<b>String:</b> " + teks + "<br>";
+      hasil += "<b>Boolean 1:</b> " + benar + "<br>";
+      hasil += "<b>Boolean 0:</b> " + salah + "<br>";
+      hasil += "<b>Null:</b> " + kosong + "<br>";
+      hasil += "<b>Undefined:</b> " + tidakDidefinisikan + "<br>";
+      hasil += "<b>Array:</b> " + daftar.join(", ") + "<br>";
+      hasil += "<b>Date:</b> " + tanggal + "<br>";
+      hasil +=
+        "<b>RegExp:</b> " +
+        pola +
+        ", Ini Sirsak = " +
+        pola.test("Sirsak") +
+        "<br>";
+      hasil +=
+        "<b>Object:</b> nama = " +
+        orang.nama +
+        ", umur = " +
+        orang.umur +
+        "<br>";
+      // Tampilkan hasil di halaman
+      document.getElementById("outputTipeData").innerHTML = hasil;
+
+      var nama = "Dewi";
+      var umur = 21;
+      var isMahasiswa = true;
+      document.getElementById("test").innerHTML =
+        "Nama: " +
+        nama +
+        "<br>" +
+        "Umur: " +
+        umur +
+        "<br>" +
+        "Mahasiswa: " +
+        isMahasiswa;
+    </script> -->
+
+    <!-- ARRAY
+    <h2>Ini Contoh Array 1</h2>
+    <div id="array"></div>
+    <h2>Ini Contoh Array 2</h2>
+    <div id="array2"></div>
+    <script>
+      var data = ["Satu", 2, true, "Tiga", 4]; // Array dengan tipe data campuran
+      var arr2 = [
+        ["satu", "dua"],
+        ["tiga", "empat"],
+      ]; // Array 2D
+      document.getElementById("array").innerHTML =
+        "Elemen pertama: " +
+        data[0] +
+        "<br />" +
+        "Elemen ketiga: " +
+        data[2] +
+        "<br />" +
+        "Isi arr2: " +
+        arr2 +
+        "<br />" +
+        "Elemen arr2[0][1]: " +
+        arr2[0][1] +
+        "<br />";
+      +(
+        //elemen pada baris 0, kolom 1  // mengembalikan undefined
+        data[10]
+      );
+
+      var data2 = ["pisang", "apel", "mangga"];
+      // Menampilkan hasil ke HTML
+      document.getElementById("array2").innerHTML =
+        "Isi awal array: " + data2 + "<br>";
+      +"Panjang awal array: " +
+        data2.length +
+        "<br><br>" +
+        // Menambahkan elemen baru
+        "Menambahkan durian (push): " +
+        data2.push("durian") +
+        "<br>" + //mengembalikan panjang baru array
+        "Isi array setelah push: " +
+        data2 +
+        "<br>" +
+        // Menghapus elemen terakhir
+        "Menghapus elemen terakhir (pop): " +
+        data2.pop() +
+        "<br>" + // mengembalikan elemen yang dihapus
+        "Isi array setelah pop: " +
+        data2 +
+        "<br>"; -->
+    <!-- </script> -->
+
+    <!-- Pengendalian Struktur
+    <h2> Ini test Pengendalian Strukstur</h2>
+    <div id="outputPercabangan"></div>
+
+    <script>
+      var pendidikan = "S2";
+      var gelar;
+      if (pendidikan === "S1") {
+        gelar = "Sarjana";
+      } else if (pendidikan === "S2") {
+        gelar = "Master";
+      } else if (pendidikan === "S3") {
+        gelar = "Doktor";
+      } else {
+        gelar = "Tidak diketahui";
+      }
+      document.getElementById("outputPercabangan").innerHTML =
+        "Sekarang kamu: " + pendidikan + ", gelar kamu: " + gelar;
+    </script> -->
+
+    <!--  -->
+    <script>
+      var jadwal = {
+        platform: 34,
+        telah_berangkat: false,
+        tujuan: "Medan",
+        asal: "Jakarta",
+      };
+
+      var objectUtama = {
+        properti1: nilai1,
+        properti2: nilai2,
+        propertiAnak: {
+          subProperti1: nilaiA,
+          subProperti2: nilaiB,
+        },
+      };
+
+      // Nested Object
+      var jadwal = {
+        platform: 34,
+        telah_berangkat: false,
+        asal: {
+          kode_kota: "MDN",
+          nama_kota: "Medan",
+          waktu: "2023-12-29 14:00",
+        },
+        tujuan: {
+          kode_kota: "JKT",
+          nama_kota: "Jakarta",
+          waktu: "2023-12-29 17:30",
+        },
+      };
+    </script>
+
+    <!-- AKSES NILAI PROPERTY  -->
+    <h2>LATIHAN JAVA Akses Nilai Property</h2>
+    <div id="outputObject"></div>
+    <script>
+      var mobil = {
+        "warna-badan": "merah",
+        "nomor-polisi": "BK1234AB",
+        merk: "Toyota", // properti dengan nama biasa
+        tahun: 2020,
+      };
+      // Nested Object
+      var jadwal = {
+        platform: 34,
+        telah_berangkat: false,
+        asal: {
+          kode_kota: "MDN",
+          nama_kota: "Medan",
+          waktu: "2023-12-29 14:00",
+        },
+        tujuan: {
+          kode_kota: "JKT",
+          nama_kota: "Jakarta",
+          waktu: "2023-12-29 17:30",
+        },
+      };
+      document.getElementById("outputObject").innerHTML =
+        "Warna Mobil: " +
+        mobil["warna-badan"] +
+        "<br>" +
+        "Nomor Polisi: " +
+        mobil["nomor-polisi"] +
+        "<br>" +
+        "Merk: " +
+        mobil.merk +
+        "<br>" +
+        "Tahun: " +
+        mobil.tahun +
+        "<br>" +
+        "Asal: " +
+        jadwal.asal.nama_kota +
+        "<br>" +
+        "Tujuan: " +
+        jadwal.tujuan.nama_kota;
+    </script>
+
+    <!-- Pemanggilan Fungsi -->
+
+    <script>
+      document.getElementById("hasil").innerHTML =
+        "Hasil dari tambah(3, 5) adalah " +
+        tambah(3, 5) +
+        "<br>" +
+        "Hasil dari kali(4, 5) adalah " +
+        kali(4, 5);
+
+      // Pemanggilan fungsi dan penyimpanan hasilnya
+      var simpan = tambah(3, 5); // simpan = 8
+      var hasil1 = tambah(simpan, 2); // 8 + 2 = 10
+      var hasil2 = tambah(tambah(3, 5), 2); // (8) + 2 = 10
+      var hasil3 = tambah(tambah(2, 3), 4); // (5) + 4 = 9
+      // Tampilkan hasil ke HTML
+      document.getElementById("hasilTambah").innerHTML =
+        "tambah(3,5) = " +
+        simpan +
+        "<br>" +
+        "tambah(simpan,2) = " +
+        hasil1 +
+        "<br>" +
+        "tambah(tambah(3,5),2) = " +
+        hasil2 +
+        "<br>" +
+        "tambah(tambah(2,3),4) = " +
+        hasil3;
+      document.getElementById("hasilKali").innerHTML =
+        "kali(4,5) = " + kali(4, 5); // contoh fungsi ekspresi
+    </script>
+
+    <!-- JQuery -->
+
+    <head>
+      <title>The jQuery Example</title>
+      <script type="text/javascript" src="jquery-3.7.0.min.js"></script>
+      <script type="text/javascript">
+        $(document).ready(function () {
+          document.write("Hello, World!");
+        });
+      </script>
+    </head>
+    <body>
+      <h1>Hello</h1>
+    </body>
+
+    <!-- Funsgi Dasar JQuery -->
+     <head>
+        <meta charset="UTF-8">
+        <script src="jquery.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("body").append("<p>Halo, Andi!</p>");
+            });
+        </script>
+     </head>
+
+     </body>
+     
+  </body>
+</html>

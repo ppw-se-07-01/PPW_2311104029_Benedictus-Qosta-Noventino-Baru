@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Mahasiswa</title>
+    <style>
+        body { font-family: sans-serif; max-width: 800px; margin: 20px auto; padding: 20px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .form-group { margin-bottom: 10px; }
+        input { padding: 8px; width: 100%; box-sizing: border-box; }
+        button { padding: 10px 15px; cursor: pointer; background-color: #28a745; color: white; border: none; }
+        button.delete { background-color: #dc3545; }
+        button.edit { background-color: #ffc107; color: black; }
+    </style>
+</head>
+<body>
+
+    <h2>Manajemen Data Mahasiswa</h2>
+
+    <div id="form-container">
+        <input type="hidden" id="mhs-id">
+        <div class="form-group">
+            <input type="text" id="nim" placeholder="NIM" required>
+        </div>
+        <div class="form-group">
+            <input type="text" id="nama" placeholder="Nama Lengkap" required>
+        </div>
+        <div class="form-group">
+            <input type="text" id="jurusan" placeholder="Jurusan" required>
+        </div>
+        <button onclick="simpanData()">Simpan Data</button>
+        <button onclick="resetForm()" style="background-color: #6c757d;">Batal</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>NIM</th>
+                <th>Nama</th>
+                <th>Jurusan</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody id="tabel-mahasiswa">
+            </tbody>
+    </table>
+
+    <script>
+        const apiUrl = 'http://localhost:3000/api/mahasiswa';
+
+        // 1. Fungsi Load Data (READ)
+        async function loadData() {
+            const response = await fetch(apiUrl);
+            const data = await response.json();
+            const tabelBody = document.getElementById('tabel-mahasiswa');
+            tabelBody.innerHTML = '';
+
+            data.forEach(mhs => {
+                const row = `
+                    <tr>
+                        <td>${mhs.nim}</td>
+                        <td>${mhs.nama}</td>
+                        <td>${mhs.jurusan}</td>
+                        <td>
+                            <button class="edit" onclick="editData(${mhs.id}, '${mhs.nim}', '${mhs.nama}', '${mhs.jurusan}')">Edit</button>
+                            <button class="delete" onclick="hapusData(${mhs.id})">Hapus</button>
+                        </td>
+                    </tr>
+                `;
+                tabelBody.innerHTML += row;
+            });
+        }
+
+        // 2. Fungsi Simpan (CREATE & UPDATE)
+        async function simpanData() {
+            const id = document.getElementById('mhs-id').value;
+            const nim = document.getElementById('nim').value;
+            const nama = document.getElementById('nama').value;
+            const jurusan = document.getElementById('jurusan').value;
+
+            if(!nim || !nama || !jurusan) {
+                alert('Semua field harus diisi!');
+                return;
+            }
+
+            const mhsData = { nim, nama, jurusan };
+            
+            let method = 'POST';
+            let url = apiUrl;
+
+            // Jika ada ID, berarti mode EDIT (PUT)
+            if (id) {
+                method = 'PUT';
+                url = `${apiUrl}/${id}`;
+            }
+
+            await fetch(url, {
+                method: method,
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(mhsData)
+            });
+
+            resetForm();
+            loadData();
+        }
+
+        // 3. Fungsi Hapus (DELETE)
+        async function hapusData(id) {
+            if(confirm('Yakin ingin menghapus data ini?')) {
+                await fetch(`${apiUrl}/${id}`, { method: 'DELETE' });
+                loadData();
+            }
+        }
+
+        // Helper: Menyiapkan form untuk edit
+        function editData(id, nim, nama, jurusan) {
+            document.getElementById('mhs-id').value = id;
+            document.getElementById('nim').value = nim;
+            document.getElementById('nama').value = nama;
+            document.getElementById('jurusan').value = jurusan;
+        }
+
+        // Helper: Reset form
+        function resetForm() {
+            document.getElementById('mhs-id').value = '';
+            document.getElementById('nim').value = '';
+            document.getElementById('nama').value = '';
+            document.getElementById('jurusan').value = '';
+        }
+
+        // Load data saat halaman dibuka
+        loadData();
+    </script>
+</body>
+</html>

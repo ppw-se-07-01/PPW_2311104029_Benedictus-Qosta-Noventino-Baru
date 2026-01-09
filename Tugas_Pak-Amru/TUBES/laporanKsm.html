@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Laporan KSM — Input Data Sampah (UI)</title>
+    <link rel="stylesheet" href="./laporan-ksm.css" />
+  </head>
+  <body>
+    <main class="page">
+      <!-- Header (KSMHeader style) -->
+      <header class="ksm-header" role="banner" aria-label="Header KSM">
+        <div class="ksm-header-inner">
+          <div class="ksm-left">
+            <div class="ksm-avatar" aria-hidden="true">KSM</div>
+            <div class="ksm-info">
+              <h1 class="ksm-title">KSM AJIBARANG</h1>
+              <p class="ksm-sub">
+                Selamat datang — pilih aksi atau isi laporan
+              </p>
+              <div class="ksm-actions">
+                <button class="btn small primary">Laporan</button>
+                <button class="btn small ghost">Riwayat</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="ksm-right">
+            <div class="ksm-stats" aria-hidden="true">
+              <div class="stat">
+                <div class="stat-num">Aktif</div>
+                <div class="stat-label">Status</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- decorative -->
+        <div class="decor decor-1" aria-hidden="true"></div>
+        <div class="decor decor-2" aria-hidden="true"></div>
+      </header>
+
+      <!-- Sub-menu buttons (anchors to sections) -->
+      <nav class="sub-menu" aria-label="Navigasi bagian laporan">
+        <div class="sub-inner">
+          <a class="nav-btn" href="#sampah_masuk">Sampah Masuk</a>
+          <a class="nav-btn" href="#hasil_pilahan">Hasil Pilahan</a>
+          <a class="nav-btn" href="#pengangkutan">Pengangkutan</a>
+          <a class="nav-btn" href="#pemusnahan">Pemusnahan</a>
+          <a class="nav-btn" href="#timbunan">Timbunan</a>
+        </div>
+      </nav>
+
+      <!-- Date + actions -->
+      <section class="date-card" aria-label="Tanggal Laporan">
+        <div class="date-left">
+          <h2 class="date-title">Tanggal</h2>
+          <div class="date-value">26-10-2025</div>
+        </div>
+        <div class="date-right">
+          <button class="btn primary">Simpan Sementara</button>
+        </div>
+      </section>
+
+      <!-- Form UI only -->
+      <form class="report-form" novalidate>
+        <section id="sampah_masuk" class="group">
+          <header class="group-header">Sampah Masuk</header>
+          <div class="group-body">
+            <label class="field">
+              <span class="label">Total Sampah Masuk (m³)</span>
+              <input type="text" placeholder="Contoh: 1.25" />
+            </label>
+            <label class="field">
+              <span class="label">Keterangan</span>
+              <input type="text" placeholder="Catatan tambahan (opsional)" />
+            </label>
+          </div>
+        </section>
+
+        <section id="hasil_pilahan" class="group">
+          <header class="group-header">Hasil Pilahan</header>
+          <div class="group-body cols-2">
+            <label class="field">
+              <span class="label">Bahan RDF (m³)</span>
+              <input type="text" placeholder="0.50" />
+            </label>
+            <label class="field">
+              <span class="label">Bursam (m³)</span>
+              <input type="text" placeholder="0.10" />
+            </label>
+            <label class="field">
+              <span class="label">Residu (m³)</span>
+              <input type="text" placeholder="0.20" />
+            </label>
+            <label class="field">
+              <span class="label">Rongsok (m³)</span>
+              <input type="text" placeholder="0.05" />
+            </label>
+          </div>
+        </section>
+
+        <section id="pengangkutan" class="group">
+          <header class="group-header">Pengangkutan</header>
+          <div class="group-body cols-2">
+            <label class="field">
+              <span class="label">Bahan RDF (m³)</span>
+              <input type="text" placeholder="0.20" />
+            </label>
+            <label class="field">
+              <span class="label">Bursam (m³)</span>
+              <input type="text" placeholder="0.10" />
+            </label>
+            <label class="field">
+              <span class="label">Residu (m³)</span>
+              <input type="text" placeholder="0.05" />
+            </label>
+            <label class="field">
+              <span class="label">Rongsok (m³)</span>
+              <input type="text" placeholder="0.02" />
+            </label>
+          </div>
+        </section>
+
+        <section id="pemusnahan" class="group">
+          <header class="group-header">Pemusnahan</header>
+          <div class="group-body cols-2">
+            <label class="field">
+              <span class="label">Sampah Murni (m³)</span>
+              <input type="text" placeholder="0.30" />
+            </label>
+            <label class="field">
+              <span class="label">Bahan RDF (m³)</span>
+              <input type="text" placeholder="0.10" />
+            </label>
+            <label class="field">
+              <span class="label">Residu (m³)</span>
+              <input type="text" placeholder="0.05" />
+            </label>
+          </div>
+        </section>
+
+        <section id="timbunan" class="group">
+          <header class="group-header">Timbunan</header>
+          <div class="group-body cols-2">
+            <label class="field">
+              <span class="label">Sampah Murni (m³)</span>
+              <input type="text" placeholder="0.40" />
+            </label>
+            <label class="field">
+              <span class="label">Bahan RDF (m³)</span>
+              <input type="text" placeholder="0.10" />
+            </label>
+            <label class="field">
+              <span class="label">Residu (m³)</span>
+              <input type="text" placeholder="0.05" />
+            </label>
+            <label class="field">
+              <span class="label">RDF (m³)</span>
+              <input type="text" placeholder="0.02" />
+            </label>
+            <label class="field">
+              <span class="label">Rongsok (m³)</span>
+              <input type="text" placeholder="0.01" />
+            </label>
+          </div>
+        </section>
+
+        <div class="form-actions">
+          <button type="submit" class="btn submit primary large">Kirim</button>
+        </div>
+      </form>
+
+      <footer class="footer-note">
+        <p>
+          UI only — tanpa JavaScript. Simpan file ini bersama laporan-ksm.css.
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>

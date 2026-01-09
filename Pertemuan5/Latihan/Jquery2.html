@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("div").animate({
+                    height: 'toggle'
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <p>Click the button multiple times to toggle the animation.</p>
+    <button>Toggle Animation</button>
+    <div style="width:100px;height:100px;background-color:red;margin-top:10px;"></div>
+</body>
+</html>

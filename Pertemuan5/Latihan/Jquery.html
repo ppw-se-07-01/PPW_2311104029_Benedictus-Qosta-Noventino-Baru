@@ -1,0 +1,25 @@
+<html>
+
+<head>
+    <title>The jQuery Example</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js">
+    </script>
+    <script>
+    $(document).ready(function() {
+      var nilai = 75;
+
+      if (nilai >= 70) {
+        $("#output").text("Selamat, Anda Lulus!");
+        $("#output").css("color", "green");
+      } else {
+        $("#output").text("Maaf, Anda Tidak Lulus.");
+        $("#output").css("color", "red");
+      }
+    });
+    </script>
+</head>
+
+<body>
+    <p id="output"></p>
+</body>
+</html>

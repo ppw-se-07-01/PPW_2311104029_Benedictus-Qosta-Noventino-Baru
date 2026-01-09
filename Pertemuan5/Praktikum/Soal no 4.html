@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fade In / Fade Out dengan jQuery</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: #007bff; 
+      border-radius: 6px;
+      margin-bottom: 12px;
+    }
+
+    button {
+      margin-right: 8px;
+      padding: 8px 12px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  </style>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <div id="kotak" class="box" aria-hidden="false"></div>
+
+  <button id="btn-sembunyikan">Sembunyikan</button>
+  <button id="btn-tampilkan" disabled>Tampilkan</button>
+
+  <script>
+    $(document).ready(function() {
+      const $kotak = $("#kotak");
+      const $btnHide = $("#btn-sembunyikan");
+      const $btnShow = $("#btn-tampilkan");
+      const durasi = 600; 
+
+      function setVisible(isVisible) {
+        $kotak.attr("aria-hidden", !isVisible);
+        $btnHide.prop("disabled", !isVisible);
+        $btnShow.prop("disabled", isVisible);
+      }
+
+      setVisible(true);
+
+      $btnHide.on("click", function() {
+        $kotak.stop(true, true).fadeOut(durasi, function() {
+          setVisible(false);
+        });
+      });
+
+      $btnShow.on("click", function() {
+        $kotak.stop(true, true).fadeIn(durasi, function() {
+          setVisible(true);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soal no 1</title>
+</head>
+<body>
+  <h2>Pembelian barang</h2>
+
+  <!-- Tempat daftar barang ditampilkan -->
+  <div id="daftar-barang"></div>
+
+  <br>
+
+  <!-- buttonn hitung -->
+  <button id="hitung-btn">Hitung Total Harga</button>
+
+  <h3 id="total-harga"></h3>
+
+  <script>
+    // ini data barangnta (klo di hapus ya ilang)
+    const barang = [
+      { nama: "Susu UHT", harga: 42000, jumlah: 10 },
+      { nama: "Roti Tawar", harga: 30000, jumlah: 3 },
+      { nama: "Mie Instan", harga: 20000, jumlah: 5 },
+      { nama: "Sosis", harga: 51000, jumlah: 7 }
+    ];
+
+    // menapilkan daftar barang
+    const daftarDiv = document.getElementById("daftar-barang");
+    barang.forEach(item => {
+      daftarDiv.innerHTML += `${item.nama} -- Rp ${item.harga.toLocaleString()} x ${item.jumlah}<br>`;
+    });
+
+    // sistem hitung matematikanya buat jumlahin totalnya
+    document.getElementById("hitung-btn").addEventListener("click", function() {
+      let total = 0;
+      barang.forEach(item => {
+        total += item.harga * item.jumlah;
+      });
+
+      document.getElementById("total-harga").innerText =
+        "Total harga pembelian adalah: Rp " + total.toLocaleString();
+    });
+  </script>
+</body>
+</html>
